@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "pyxidiaaks-eb3d"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "pyxidiaaks-eb3d"
+    spec:
+      containers:
+        - name: "pyxidiaaks-eb3d"
+          image: "pyxidiaregistery.azurecr.io/pyxidiaaks"
+          ports:
+          - containerPort: 8080
