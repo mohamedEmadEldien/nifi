@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "pyxidiaaks-eb3d"
+    labels:
+        app: "pyxidiaaks-eb3d"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
+    selector:
+        app: "pyxidiaaks-eb3d"
